@@ -2,10 +2,10 @@ import { data } from "@/data";
 import { withSession } from "@/session";
 
 const handler= async function(req, res) {
-  const { userName, password } = req.body;
-    // console.log(userName, password);
+  const { username, password } = req.body;
+    // console.log(username, password);
 
-  const user = data.find((item) => item.username == userName);
+  const user = data.find((item) => item.username == username);
 
   if (user && user.password == password) {
     req.session.set("user", user);   // key : value pair
